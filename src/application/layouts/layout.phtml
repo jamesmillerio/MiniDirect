@@ -1,0 +1,87 @@
+<?php echo $this->doctype() ?>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>
+		
+			MiniDirect
+		
+		</title>
+
+		<?php echo $this->headLink()->appendStylesheet('/css/bootstrap.min.css') ?>
+
+		<?php echo $this->headLink()->appendStylesheet('/css/global.less', null, null, array('rel'=>'stylesheet/less')) ?>
+
+		<?php echo $this->headScript()->appendFile('https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js') ?>
+
+		<?php echo $this->headScript()->appendFile('/js/modernizr.custom.20456.js') ?>
+
+		<?php echo $this->headScript()->appendFile('/js/less-1.3.1.min.js') ?>
+
+		<?php echo $this->headScript()->appendFile('/js/bootstrap.min.js') ?>
+
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="span12">
+
+					<img src="" />
+
+				</div>
+
+			</div>
+
+			<div class="navbar">
+
+				<div class="navbar-inner">
+			
+					<ul class="nav">
+					
+						<li><a href="#">For Individuals</a></li>
+
+						<li><a href="#">For Physicians</a></li>
+
+						<li><a href="#">Support</a></li>
+
+					</ul>
+
+					<ul class="nav pull-right">
+
+						<li><a href="#"><i class="icon-user"></i>Log In</a></li>
+
+						<li><a href="#"><i class="icon-pencil"></i>Register</a></li>
+
+					</ul>
+			
+				</div>
+			
+			</div>
+
+			<div class="row">
+
+				<div class="span12">
+
+					<div class="">
+
+						<?php echo $this->layout()->content ?>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

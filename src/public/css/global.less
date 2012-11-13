@@ -1,0 +1,32 @@
+// Variables
+@contentBackgroundColor: #F2F2F2;
+@content-margin: 10px;
+
+// Mixins
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// Main CSS
+
+body
+{
+	background-image: url('../img/grey.png');
+	padding-top: 25px;
+}
+
+div[class*="span"].content-outer
+{
+    .rounded-corners;
+    background-color: @contentBackgroundColor;
+}
+
+.content-inner
+{
+    margin: @content-margin @content-margin @content-margin @content-margin;
+}
