@@ -24,57 +24,100 @@
 
 		<?php echo $this->headScript()->appendFile('/js/bootstrap.min.js') ?>
 
+		<?php echo $this->headScript()->appendFile('/js/global.js') ?>
+
 	</head>
 
 	<body>
 
-		<div class="container">
+		<div id="container" class="container">
 
-			<div class="row">
+			<div id="content">
 
-				<div class="span12">
+				<div id="header" class="row">
 
-					<img src="" />
+					<div class="span12">
 
-				</div>
+						<h3>
+							
+							MiniDirect
 
-			</div>
-
-			<div class="navbar">
-
-				<div class="navbar-inner">
-			
-					<ul class="nav">
-					
-						<li><a href="#">For Individuals</a></li>
-
-						<li><a href="#">For Physicians</a></li>
-
-						<li><a href="#">Support</a></li>
-
-					</ul>
-
-					<ul class="nav pull-right">
-
-						<li><a href="#"><i class="icon-user"></i>Log In</a></li>
-
-						<li><a href="#"><i class="icon-pencil"></i>Register</a></li>
-
-					</ul>
-			
-				</div>
-			
-			</div>
-
-			<div class="row">
-
-				<div class="span12">
-
-					<div class="">
-
-						<?php echo $this->layout()->content ?>
+						</h3>
 
 					</div>
+
+				</div>
+
+				<div id="navbar" class="navbar">
+
+					<div class="navbar-inner">
+				
+						<ul class="nav">
+						
+							<li class="active"><a href="#">For Patients</a></li>
+
+							<li><a href="#">For Physicians</a></li>
+
+							<li><a href="#">Support</a></li>
+
+						</ul>
+
+						<ul class="nav pull-right">
+
+							<li><a href="#"><i class="icon-user"></i>Log In</a></li>
+
+							<li><a href="#"><i class="icon-pencil"></i>Register</a></li>
+
+						</ul>
+				
+					</div>
+				
+				</div>
+
+				<div id="missionStatement" class="row">
+
+					<div class="span12">
+
+						<p class="lead">
+
+							Welcome to MiniDirect! We help physicians help you by analyzing information about your health.
+
+						</p>
+
+					</div>
+
+				</div>
+
+				<div class="row">
+
+					<?php echo $this->layout()->content ?>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id="footer">
+
+			<div class="container">
+
+				<div class="row margin-top-l">
+
+					<div class="span6 pull-left">
+
+						<a href="#">about</a> | <a href="#">faq</a> | <a href="#">legal</a> | <a href="#">privacy policy</a> | <a href="#">contact us</a> | <a href="#">feedback</a> <br />
+
+						&copy; 2012 Medical Outcome Systems
+
+					</div>
+
+					<div class="span6 pull-right">
+
+						<img src="/img/Medical-Outcome-Systems-Transparent.png" class="pull-right" />
+
+					</div>
+
 
 				</div>
 

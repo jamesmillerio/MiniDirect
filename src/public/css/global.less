@@ -1,6 +1,10 @@
 // Variables
 @contentBackgroundColor: #F2F2F2;
 @content-margin: 10px;
+@footerHeight: 200px;
+
+//Common PX Sizes
+@largePx: 20px;
 
 // Mixins
 
@@ -14,10 +18,25 @@
 
 // Main CSS
 
+html, body, #container
+{
+    height: 100%;
+}
+
 body
 {
 	background-image: url('../img/grey.png');
-	padding-top: 25px;
+}
+
+body > #container
+{
+    height: auto;
+    min-height: 100%;
+}
+
+#content
+{
+    padding-bottom: @footerHeight;
 }
 
 div[class*="span"].content-outer
@@ -30,3 +49,19 @@ div[class*="span"].content-outer
 {
     margin: @content-margin @content-margin @content-margin @content-margin;
 }
+
+#footer
+{
+    background-image: url(../img/debut_dark_@2X.png);
+    color: @contentBackgroundColor;
+    clear: both;
+    height: @footerHeight;
+    margin-top: -@footerHeight;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+// Helper CSS Classes
+
+.margin-top-l { margin-top: @largePx; }
