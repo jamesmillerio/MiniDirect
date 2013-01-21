@@ -1,0 +1,34 @@
+<script type="">
+
+    MINI.Form = jQuery.extend({
+        Account: "<?php echo $this->account; ?>",
+        Patient: "<?php echo $this->patient; ?>"
+    }, MINI.Form);
+
+</script>
+
+<?php $this->headScript()->appendFile("/js/assessment.js"); ?>
+
+<div class="row">
+
+    <div class="span12 content-outer">
+
+        <div id="assessmentContent" class="content-inner">
+
+            <h3>
+
+                Please wait while we retrieve your assessment...
+
+            </h3>
+
+            <div class="progress progress-striped active">
+
+                <div class="bar" style="width: 100%;"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

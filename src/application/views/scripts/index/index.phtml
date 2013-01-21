@@ -1,53 +1,71 @@
-<div class="span9 content-outer">
+<div id="missionStatement" class="row">
 
-	<div class="content-inner">
+    <div class="span12">
 
-		<img src="http://www.franchisehelp.com/wp-content/uploads/2012/02/1090-doctor-doctors-express-franchise.jpg" class="pull-right img-polaroid" width="250px" />
+        <p class="lead">
 
-		<p>		
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus, nisi nec laoreet mollis, nisl eros sagittis neque, sit amet sollicitudin leo nisi ac nisi. Phasellus ullamcorper augue in lacus lobortis suscipit. Nullam consectetur enim eget nunc ultricies vitae egestas felis ullamcorper. Morbi nisl dui, pretium sed gravida sed, rhoncus laoreet dolor. Suspendisse non mi at risus sodales bibendum. Mauris molestie pulvinar metus ut cursus. Pellentesque sit amet massa ac lectus varius porta ut at tortor. Suspendisse quis felis vel ipsum tincidunt pretium non vitae justo.
-		</p>
+            Welcome to MiniDirect! We help physicians help you by analyzing information about your health.
 
-		<p>
+        </p>
 
-Nunc leo mi, fermentum in tristique ut, fermentum vel elit. Morbi imperdiet egestas tellus, vitae molestie elit molestie sit amet. Fusce id erat risus, ut fermentum lacus. Nullam eu dolor metus, ac mattis nulla. Vestibulum nec arcu nec turpis aliquet adipiscing a ut eros. Maecenas luctus elit eu libero volutpat id tincidunt augue fermentum. Aliquam justo nisi, iaculis eget pellentesque sit amet, lobortis id dui. Aenean ut lectus vel tellus iaculis dignissim at sit amet elit. Ut purus augue, dignissim vitae placerat porta, ornare et neque. Proin fermentum justo nisl. Donec a mauris vitae nulla vulputate pretium vel faucibus neque. In hac habitasse platea dictumst. Mauris magna sem, interdum a dignissim eget, porta id augue. Morbi et porta diam. Cras ullamcorper, tellus ut tempus sodales, purus sem vestibulum nulla, quis ullamcorper dui sem eget ipsum. Nunc varius iaculis eleifend.
-
-		</p>
-
-	</div>
+    </div>
 
 </div>
 
-<div class="span3 content-outer">
+<div class="row">
 
-	<div class="content-inner">
+    <div class="span9 content-outer">
 
-		<form>
-  			
-			<fieldset>
-    
-				<legend>
+        <div class="content-inner">
 
-					Begin Assessment
+            <img src="http://www.franchisehelp.com/wp-content/uploads/2012/02/1090-doctor-doctors-express-franchise.jpg" class="pull-right img-polaroid" width="250px" />
 
-				</legend>
+            <p>		
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus, nisi nec laoreet mollis, nisl eros sagittis neque, sit amet sollicitudin leo nisi ac nisi. Phasellus ullamcorper augue in lacus lobortis suscipit. Nullam consectetur enim eget nunc ultricies vitae egestas felis ullamcorper. Morbi nisl dui, pretium sed gravida sed, rhoncus laoreet dolor. Suspendisse non mi at risus sodales bibendum. Mauris molestie pulvinar metus ut cursus. Pellentesque sit amet massa ac lectus varius porta ut at tortor. Suspendisse quis felis vel ipsum tincidunt pretium non vitae justo.
+            </p>
 
-    				<label>Patient Number *</label>
-    
-				<input type="text" class="input-medium" placeholder="Patient number…">
+            <p>
 
-    				<label>Account Number *</label>
-    
-				<input type="text" class="input-medium" placeholder="Account number…">
+    Nunc leo mi, fermentum in tristique ut, fermentum vel elit. Morbi imperdiet egestas tellus, vitae molestie elit molestie sit amet. Fusce id erat risus, ut fermentum lacus. Nullam eu dolor metus, ac mattis nulla. Vestibulum nec arcu nec turpis aliquet adipiscing a ut eros. Maecenas luctus elit eu libero volutpat id tincidunt augue fermentum. Aliquam justo nisi, iaculis eget pellentesque sit amet, lobortis id dui. Aenean ut lectus vel tellus iaculis dignissim at sit amet elit. Ut purus augue, dignissim vitae placerat porta, ornare et neque. Proin fermentum justo nisl. Donec a mauris vitae nulla vulputate pretium vel faucibus neque. In hac habitasse platea dictumst. Mauris magna sem, interdum a dignissim eget, porta id augue. Morbi et porta diam. Cras ullamcorper, tellus ut tempus sodales, purus sem vestibulum nulla, quis ullamcorper dui sem eget ipsum. Nunc varius iaculis eleifend.
 
-				<span class="help-block">* Required Fields</span>
+            </p>
 
-				<button type="submit" class="btn btn-primary">Begin</button>
-				
-			</fieldset>
-		
-		</form>
+        </div>
 
-	</div>
+    </div>
+
+    <div class="span3 content-outer">
+
+        <div class="content-inner">
+
+            <form method="post" action="<?php echo $this->url(array("controller" => "Patient", "action" => "assessment")); ?>">
+                    
+                <fieldset>
+        
+                    <legend>
+
+                        Begin Assessment
+
+                    </legend>
+
+                    <label>Patient Number *</label>
+        
+                    <input name="patient" type="text" class="input-medium" placeholder="Patient number…" />
+
+                    <label>Account Number *</label>
+        
+                    <input name="account" type="text" class="input-medium" placeholder="Account number…" />
+
+                    <span class="help-block">* Required Fields</span>
+
+                    <button type="submit" class="btn btn-primary">Begin</button>
+                    
+                </fieldset>
+                
+            </form>
+
+        </div>
+
+    </div>
 
 </div>

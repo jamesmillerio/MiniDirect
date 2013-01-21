@@ -12,19 +12,33 @@
 		
 		</title>
 
-		<?php echo $this->headLink()->appendStylesheet('/css/bootstrap.min.css') ?>
+        <?php 
 
-		<?php echo $this->headLink()->appendStylesheet('/css/global.less', null, null, array('rel'=>'stylesheet/less')) ?>
+            $this->headLink()->appendStylesheet('/css/bootstrap.min.css');
 
-		<?php echo $this->headScript()->appendFile('https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js') ?>
+		    $this->headLink()->appendStylesheet('/css/global.less', null, null, array('rel'=>'stylesheet/less'));
 
-		<?php echo $this->headScript()->appendFile('/js/modernizr.custom.20456.js') ?>
+		    $this->headScript()->offsetSetFile(-5, 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js');
 
-		<?php echo $this->headScript()->appendFile('/js/less-1.3.1.min.js') ?>
+		    $this->headScript()->offsetSetFile(-4, '/js/modernizr.custom.20456.js');
 
-		<?php echo $this->headScript()->appendFile('/js/bootstrap.min.js') ?>
+		    $this->headScript()->offsetSetFile(-3, '/js/less-1.3.1.min.js');
 
-		<?php echo $this->headScript()->appendFile('/js/global.js') ?>
+		    $this->headScript()->offsetSetFile(-2, '/js/bootstrap.min.js');
+
+		    $this->headScript()->offsetSetFile(-1, '/js/global.js');
+
+        ?>
+
+        <?php echo $this->headLink() ?>
+
+        <?php echo $this->headScript() ?>
+
+        <script type="text/javascript">
+
+            MINI.ServiceURL.AssessmentURL = "<?php echo $this->url(array('controller' => 'Patient', 'action' => 'getassessment')); ?>";
+
+        </script>
 
 	</head>
 
@@ -40,7 +54,11 @@
 
 						<h3>
 							
-							MiniDirect
+                            <a href="/">
+                            
+							    MiniDirect
+                            
+                            </a>
 
 						</h3>
 
@@ -53,12 +71,38 @@
 					<div class="navbar-inner">
 				
 						<ul class="nav">
+
+                            <?php $controller = strtolower(Zend_Controller_Front::getInstance()->getRequest()->getControllerName()); ?>
 						
-							<li class="active"><a href="#">For Patients</a></li>
+                            <li class="<?php echo $controller == "index" ? "active" : ""; ?>">
 
-							<li><a href="#">For Physicians</a></li>
+                                <a href="<?php echo $this->url(array('controller' => 'Index', 'action' => 'index')); ?>">
 
-							<li><a href="#">Support</a></li>
+                                    For Patients
+
+                                </a>
+
+                            </li>
+
+                            <li class="<?php echo $controller == "physician" ? "active" : ""; ?>">
+
+                                <a href="<?php echo $this->url(array('controller' => 'Physician', 'action' => 'index')); ?>">
+
+                                    For Physicians
+
+                                </a>
+
+                            </li>
+
+                            <li class="<?php echo $controller == "support" ? "active" : ""; ?>">
+
+                                <a href="<?php echo $this->url(array('controller' => 'About', 'action' => 'Support')); ?>">
+
+                                    Support
+
+                                </a>
+
+                            </li>
 
 						</ul>
 
@@ -66,7 +110,7 @@
 
 							<li><a href="#"><i class="icon-user"></i>Log In</a></li>
 
-							<li><a href="#"><i class="icon-pencil"></i>Register</a></li>
+							<li><a href="<?php echo $this->url(array('controller' => 'Physician', 'action' => 'register')); ?>"><i class="icon-pencil"></i>Register</a></li>
 
 						</ul>
 				
@@ -74,25 +118,7 @@
 				
 				</div>
 
-				<div id="missionStatement" class="row">
-
-					<div class="span12">
-
-						<p class="lead">
-
-							Welcome to MiniDirect! We help physicians help you by analyzing information about your health.
-
-						</p>
-
-					</div>
-
-				</div>
-
-				<div class="row">
-
-					<?php echo $this->layout()->content ?>
-
-				</div>
+				<?php echo $this->layout()->content ?>
 
 			</div>
 
@@ -106,7 +132,17 @@
 
 					<div class="span6 pull-left">
 
-						<a href="#">about</a> | <a href="#">faq</a> | <a href="#">legal</a> | <a href="#">privacy policy</a> | <a href="#">contact us</a> | <a href="#">feedback</a> <br />
+                        <a href="<?php echo $this->url(array('controller' => 'About', 'action' => 'index')); ?>">about</a> | 
+
+                        <a href="<?php echo $this->url(array('controller' => 'About', 'action' => 'faq')); ?>">faq</a> | 
+
+                        <a href="<?php echo $this->url(array('controller' => 'About', 'action' => 'legal')); ?>">legal</a> | 
+    
+                        <a href="<?php echo $this->url(array('controller' => 'About', 'action' => 'privacy')); ?>">privacy policy</a> | 
+
+                        <a href="<?php echo $this->url(array('controller' => 'About', 'action' => 'contact')); ?>">contact us</a> | 
+
+                        <a href="<?php echo $this->url(array('controller' => 'About', 'action' => 'feedback')); ?>">feedback</a> <br />
 
 						&copy; 2012 Medical Outcome Systems
 
@@ -124,6 +160,13 @@
 			</div>
 
 		</div>
+
+        <!-- 
+            PHP Version: <?php echo phpversion(); ?>
+
+            Zend Version: <?php echo Zend_Version::getLatest(); ?>
+        
+        -->
 
 	</body>
 
